@@ -69,7 +69,7 @@ namespace LibraryManagerUnitTests
             {
                 Name = "Jan",
                 LastName = "Kowalski",
-                BorroweAddress = new Address()
+                BorrowerAddress = new Address()
                 {
                     Street = "Krakowska",
                     PostCode = "84-300",
@@ -99,7 +99,7 @@ namespace LibraryManagerUnitTests
             Borrower borrower = new Borrower()
             {
                 LastName = "Kowalski",
-                BorroweAddress = new Address()
+                BorrowerAddress = new Address()
                 {
                     Street = "Krakowska",
                     PostCode = "84-300",
@@ -115,7 +115,7 @@ namespace LibraryManagerUnitTests
             Borrower borrower1 = new Borrower()
             {
                 Name = "Jan",
-                BorroweAddress = new Address()
+                BorrowerAddress = new Address()
                 {
                     Street = "Krakowska",
                     PostCode = "84-300",
@@ -141,7 +141,7 @@ namespace LibraryManagerUnitTests
             {
                 Name = "Jan",
                 LastName = "Kowalski",
-                BorroweAddress = new Address()
+                BorrowerAddress = new Address()
                 {
                     Street = "Krakowska",
                     PostCode = "84-300",
@@ -157,7 +157,7 @@ namespace LibraryManagerUnitTests
             {
                 Name = "Jan",
                 LastName = "Kowalski",
-                BorroweAddress = new Address()
+                BorrowerAddress = new Address()
                 {
                     Street = "Krakowska",
                     PostCode = "84-300",
@@ -173,7 +173,7 @@ namespace LibraryManagerUnitTests
             {
                 Name = "Jan",
                 LastName = "Kowalski",
-                BorroweAddress = new Address()
+                BorrowerAddress = new Address()
                 {
                     Street = "Krakowska",
                     PostCode = "84-300",

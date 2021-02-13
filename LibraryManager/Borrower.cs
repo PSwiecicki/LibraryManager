@@ -12,7 +12,7 @@ namespace LibraryManager
 
         public string Name { get; set; }
         public string LastName { get; set; }
-        public Address BorroweAddress { get; set; }
+        public Address BorrowerAddress { get; set; }
         public DateTime? BirthDay { get; set; }
         public long Pesel { 
             get
@@ -22,7 +22,7 @@ namespace LibraryManager
             set
             {
                 long v = value;
-                if (v < 99999999999 && v > 10100000)
+                if (v < 99999999999 && v > 10100000 && BirthDay != null)
                 {
                     int[] numTab = new int[11];
                     for (long i = 10; i >= 0; i--)
@@ -46,7 +46,7 @@ namespace LibraryManager
                     sum += (numTab[2] * 1) % 10;
                     sum += (numTab[1] * 3) % 10;
 
-                    int century = BirthDay.Year / 100;
+                    int century = BirthDay.Value.Year / 100;
                     switch (century)
                     {
                         case 18:
@@ -68,11 +68,11 @@ namespace LibraryManager
 
                     bool isCorrect = true;
 
-                    if (yy != (BirthDay.Year % 100))
+                    if (yy != (BirthDay.Value.Year % 100))
                         isCorrect = false;
-                    if (mm != BirthDay.Month)
+                    if (mm != BirthDay.Value.Month)
                         isCorrect = false;
-                    if (dd != BirthDay.Day)
+                    if (dd != BirthDay.Value.Day)
                         isCorrect = false;
                     if (10 - (sum % 10) != numTab[0])
                         isCorrect = false;
@@ -94,7 +94,7 @@ namespace LibraryManager
                 isCorrect = false;
             if (String.IsNullOrWhiteSpace(LastName))
                 isCorrect = false;
-            if (!Address.Validate())
+            if (BorrowerAddress == null || !BorrowerAddress.Validate())
                 isCorrect = false;
             if (BirthDay == null)
                 isCorrect = false;

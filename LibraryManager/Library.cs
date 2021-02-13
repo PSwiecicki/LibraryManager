@@ -8,7 +8,7 @@ namespace LibraryManager
 {
     public class Library
     {
-        public int? LibraryID { get; private set; }
+        public int? LibraryID { get; set; }
         public string Name { get; set; }
         public Address LibAddress { get; set; }
         public BooksCollection LibBooksCollection { get; set; }
