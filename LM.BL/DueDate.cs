@@ -26,5 +26,19 @@ namespace LM.BL
                 throw new InvalidOperationException($"Book was returned {ReturnDate.Value.ToShortDateString()}");
         }
 
+        public void Save()
+        {
+            //Add some code
+        }
+
+        public bool Validate()
+        {
+            bool isValid = true;
+
+            if (ReturnDate != null && ReturnDate.Value < BorrowDate) isValid = false;
+            if (Borrower == null) isValid = false;
+
+            return isValid;
+        }
     }
 }

@@ -21,7 +21,7 @@ namespace LM.BL
         public BookCategory _category;
         public int PublicationYear { get; set; }
         public BookStatus _status { get; set; }
-        private LibraryCard libraryCard;
+        private  List<DueDate> _dueDates;
 
 
 
@@ -47,7 +47,9 @@ namespace LM.BL
         {
             bool isValid = true;
 
-            //Add some code
+            if (string.IsNullOrEmpty(Name)) isValid = false;
+            if (string.IsNullOrEmpty(Author)) isValid = false;
+            if (_dueDates == null) isValid = false;
 
             return isValid;
         }

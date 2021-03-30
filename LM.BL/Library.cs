@@ -8,6 +8,17 @@ namespace LM.BL
 {
     public class Library
     {
+        public Library()
+        {
+
+        }
+
+        public Library(int id)
+        {
+            LibraryID = id;
+        }
+
+
         public int LibraryID { get; private set; }
         public string LibraryName { get; set; }
         public Address LibraryAddress { get; set; }
@@ -40,7 +51,9 @@ namespace LM.BL
         {
             bool isValid = true;
 
-            //Add some code
+            if (LibraryName == null) isValid = false;
+            if (LibraryAddress == null) isValid = false;
+            if (LibraryResources == null) isValid = false;
 
             return isValid;
         }
