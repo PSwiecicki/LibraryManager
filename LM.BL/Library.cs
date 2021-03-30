@@ -18,34 +18,10 @@ namespace LM.BL
             LibraryID = id;
         }
 
-
         public int LibraryID { get; private set; }
         public string LibraryName { get; set; }
         public Address LibraryAddress { get; set; }
         public List<Book> LibraryResources { get; set; }
-
-        //Methods to Add
-        //AddResources()
-        //RemoveResources()
-
-
-        public void Save()
-        {
-            //Add some code
-        }
-
-        public Library Retrive(int libraryID)
-        {
-            //Add some code
-            return new Library();
-        }
-
-        public List<Library> Retrive()
-        {
-            //Add some code
-            return new List<Library>();
-        }
-
 
         public bool Validate()
         {
@@ -57,7 +33,5 @@ namespace LM.BL
 
             return isValid;
         }
-        //Retrive
-        //Validate
     }
 }

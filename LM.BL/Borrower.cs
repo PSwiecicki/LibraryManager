@@ -40,24 +40,7 @@ namespace LM.BL
 
         public List<Book> BorrowedBooksList { get; set; }
         public List<Book> LoanHistory { get; set; }
-        public Address BorowerAddress { get; set; }
-
-        public void Save()
-        {
-            //Add some code
-        }
-
-        public Borrower Retrive(int borrowerID)
-        {
-            //Add some code
-            return new Borrower();
-        }
-
-        public List<Borrower> Retrive()
-        {
-            //Add some code
-            return new List<Borrower>();
-        }
+        public Address BorrowerAddress { get; set; }
 
 
         public bool Validate()
@@ -66,7 +49,7 @@ namespace LM.BL
 
             if (string.IsNullOrEmpty(FirstName)) isValid = false;
             if (string.IsNullOrEmpty(LastName)) isValid = false;
-            if (BorowerAddress == null) isValid = false;
+            if (BorrowerAddress == null) isValid = false;
             if (PhoneNumber == null && EmailAddress == null) isValid = false; //Need define one 
             if (BirthdayDate == null) isValid = false;
             if (BorrowedBooksList == null) isValid = false;

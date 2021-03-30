@@ -21,26 +21,7 @@ namespace LM.BL
         public BookCategory _category;
         public int PublicationYear { get; set; }
         public BookStatus _status { get; set; }
-        private  List<DueDate> _dueDates;
-
-
-
-        public void Save()
-        {
-            //Add some code
-        }
-
-        public Book Retrive(int bookID)
-        {
-            //Add some code
-            return new Book();
-        }
-
-        public List<Book> Retrive()
-        {
-            //Add some code
-            return new List<Book>();
-        }
+        public List<DueDate> DueDates { get; set; }
 
 
         public bool Validate()
@@ -49,7 +30,7 @@ namespace LM.BL
 
             if (string.IsNullOrEmpty(Name)) isValid = false;
             if (string.IsNullOrEmpty(Author)) isValid = false;
-            if (_dueDates == null) isValid = false;
+            if (DueDates == null) isValid = false;
 
             return isValid;
         }
