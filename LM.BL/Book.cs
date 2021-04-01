@@ -18,9 +18,7 @@ namespace LM.BL
         public int BookID { get; private set; }
         public string Author { get; set; }
         public string Name { get; set; }
-        public BookCategory _category;
         public int PublicationYear { get; set; }
-        public BookStatus _status { get; set; }
         public List<DueDate> DueDates { get; set; }
 
 

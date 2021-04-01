@@ -8,7 +8,7 @@ namespace LM.BL
 {
     public class Library
     {
-        public Library()
+        public Library() : this(0)
         {
 
         }
@@ -16,6 +16,8 @@ namespace LM.BL
         public Library(int id)
         {
             LibraryID = id;
+            LibraryAddress = new();
+            LibraryResources = new();
         }
 
         public int LibraryID { get; private set; }

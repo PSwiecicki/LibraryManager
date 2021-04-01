@@ -5,7 +5,7 @@ namespace LM.BL
 {
     public class Borrower
     {
-        public Borrower()
+        public Borrower() : this(0)
         {
 
         }
@@ -13,6 +13,9 @@ namespace LM.BL
         public Borrower(int id)
         {
             BorrowerId = id;
+            BorrowerAddress = new();
+            BorrowedBooksList = new();
+            LoanHistory = new();
         }
 
         public int BorrowerId { get; private set; }
@@ -37,7 +40,6 @@ namespace LM.BL
         public string EmailAddress { get; set; }
         public string PhoneNumber { get; set; }
         public DateTime? BirthdayDate { get; set; }
-
         public List<Book> BorrowedBooksList { get; set; }
         public List<Book> LoanHistory { get; set; }
         public Address BorrowerAddress { get; set; }
