@@ -57,5 +57,22 @@ namespace LM.BL
 
             return new List<Address>() { address, address2 };
         }
+
+        public Address RetriveByBorrower(int borrowerId)
+        {
+            //Add some code
+
+            Address address = new()
+            {
+                Street = "Kwiecista",
+                Building = 7,
+                Apartment = 14,
+                City = "Kartkowice",
+                PostalCode = "21-037",
+                Country = "Poland"
+            };
+
+            return address;
+        }
     }
 }
