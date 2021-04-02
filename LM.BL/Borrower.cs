@@ -18,6 +18,9 @@ namespace LM.BL
             LoanHistory = new();
         }
 
+        private string emailAddress;
+        private string phoneNumber;
+
         public int BorrowerId { get; private set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -37,13 +40,43 @@ namespace LM.BL
                 return fullName;
             }
         }
-        public string EmailAddress { get; set; }
-        public string PhoneNumber { get; set; }
+        public string EmailAddress 
+        { 
+            get
+            {
+                return emailAddress;
+            }
+            set
+            {
+                string[] addressSpliter = value.Split('@');
+                if(addressSpliter.Length == 2)
+                {
+                    string[] domainSpliter = addressSpliter[1].Split('.');
+                    if (domainSpliter.Length > 2)
+                        emailAddress = value;
+                }
+            }
+        }
+        public string PhoneNumber
+        {
+            get
+            {
+
+                return phoneNumber.Insert(6, " ").Insert(3, " ");
+            }
+            set
+            {
+                int i;
+                if (value.Length == 9 && int.TryParse(value, out i))
+                {
+                    phoneNumber = value;
+                }
+            }
+        }
         public DateTime? BirthdayDate { get; set; }
         public List<Book> BorrowedBooksList { get; set; }
         public List<Book> LoanHistory { get; set; }
         public Address BorrowerAddress { get; set; }
-
 
         public bool Validate()
         {

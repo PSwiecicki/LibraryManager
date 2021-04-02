@@ -71,7 +71,6 @@ namespace LM.BL
                 PostalCode = "21-037",
                 Country = "Poland"
             };
-
             return address;
         }
     }
