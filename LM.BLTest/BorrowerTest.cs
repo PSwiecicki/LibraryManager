@@ -114,5 +114,49 @@ namespace LM.BLTest
             Assert.AreEqual(expected, actual);
             Assert.AreEqual(expected2, actual2);
         }
+
+        [TestMethod]
+        public void PhoneNumberValid()
+        {
+            Borrower borrower = new() { PhoneNumber = "123123123" };
+            string expected = "123 123 123";
+
+            string actual = borrower.PhoneNumber;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void PhoneNumberLessNumbers()
+        {
+            Borrower borrower = new() { PhoneNumber = "123123" };
+            string expected = null;
+
+            string actual = borrower.PhoneNumber;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void PhoneNumberMoreNumbers()
+        {
+            Borrower borrower = new() { PhoneNumber = "1123123123" };
+            string expected = null;
+
+            string actual = borrower.PhoneNumber;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void PhoneNumberWithChars()
+        {
+            Borrower borrower = new() { PhoneNumber = "1a31fd123" };
+            string expected = null;
+
+            string actual = borrower.PhoneNumber;
+
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

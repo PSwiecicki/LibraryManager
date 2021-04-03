@@ -61,13 +61,16 @@ namespace LM.BL
         {
             get
             {
-
-                return phoneNumber.Insert(6, " ").Insert(3, " ");
+                if (phoneNumber != null)
+                    return phoneNumber.Insert(6, " ").Insert(3, " ");
+                else
+                    return phoneNumber;
             }
             set
             {
                 int i;
-                if (value.Length == 9 && int.TryParse(value, out i))
+                string number = value.Trim();
+                if (number.Length == 9 && int.TryParse(number, out i))
                 {
                     phoneNumber = value;
                 }
