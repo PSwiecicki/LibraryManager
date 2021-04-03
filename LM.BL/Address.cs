@@ -1,6 +1,6 @@
 ﻿namespace LM.BL
 {
-    public class Address
+    public class Address : EntityBase
     {
         public Address()
         {
@@ -20,7 +20,7 @@
         public string PostalCode { get; set; }
         public string Country { get; set; }
 
-        public bool Validate()
+        public override bool Validate()
         {
             bool isValid = true;
 

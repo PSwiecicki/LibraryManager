@@ -10,9 +10,26 @@ namespace LM.BL
     {
         public bool Save(Address address)
         {
-            //Add some code
-
-            return true;
+            var success = true;
+            if(address.HasChanges)
+            {
+                if(address.IsValid)
+                {
+                    if(address.IsNew)
+                    {
+                        //Add new to DB
+                    }
+                    else
+                    {
+                        //Update
+                    }
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            return success;
         }
 
         public Address Retrive(int addressID)
@@ -59,6 +76,23 @@ namespace LM.BL
         }
 
         public Address RetriveByBorrower(int borrowerId)
+        {
+            //Add some code
+
+            Address address = new()
+            {
+                Street = "Kwiecista",
+                Building = 7,
+                Apartment = 14,
+                City = "Kartkowice",
+                PostalCode = "21-037",
+                Country = "Poland"
+            };
+            return address;
+        }
+
+
+        public Address RetriveByLibrary(int libraryId)
         {
             //Add some code
 

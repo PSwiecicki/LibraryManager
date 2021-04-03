@@ -2,7 +2,7 @@
 
 namespace LM.BL
 {
-    public class Book
+    public class Book : EntityBase
     {
         public Book()
         {
@@ -22,7 +22,7 @@ namespace LM.BL
         public List<DueDate> DueDates { get; set; }
 
 
-        public bool Validate()
+        public override bool Validate()
         {
             bool isValid = true;
 

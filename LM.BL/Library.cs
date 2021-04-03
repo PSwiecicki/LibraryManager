@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LM.BL
 {
-    public class Library
+    public class Library : EntityBase
     {
         public Library() : this(0)
         {
@@ -25,7 +25,7 @@ namespace LM.BL
         public Address LibraryAddress { get; set; }
         public List<Book> LibraryResources { get; set; }
 
-        public bool Validate()
+        public override bool Validate()
         {
             bool isValid = true;
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace LM.BL
 {
-    public class Borrower
+    public class Borrower : EntityBase
     {
         public Borrower() : this(0)
         {
@@ -81,7 +81,7 @@ namespace LM.BL
         public List<Book> LoanHistory { get; set; }
         public Address BorrowerAddress { get; set; }
 
-        public bool Validate()
+        public override bool Validate()
         {
             bool isValid = true;
 
