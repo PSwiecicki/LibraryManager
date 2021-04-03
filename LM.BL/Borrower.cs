@@ -49,10 +49,10 @@ namespace LM.BL
             set
             {
                 string[] addressSpliter = value.Split('@');
-                if(addressSpliter.Length == 2)
+                if (addressSpliter.Length == 2 && !value[0].Equals('@'))
                 {
                     string[] domainSpliter = addressSpliter[1].Split('.');
-                    if (domainSpliter.Length > 2)
+                    if (domainSpliter.Length >= 2 && !addressSpliter[1][0].Equals('.') && !addressSpliter[1][addressSpliter[1].Length-1].Equals('.'))
                         emailAddress = value;
                 }
             }
