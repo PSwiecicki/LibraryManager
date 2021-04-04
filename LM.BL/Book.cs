@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Common;
+using System.Collections.Generic;
 
 namespace LM.BL
 {
-    public class Book : EntityBase
+    public class Book : EntityBase, ILoggable
     {
         public Book()
         {
@@ -33,8 +34,7 @@ namespace LM.BL
             return isValid;
         }
 
-    }
+        public string Log() => $"{BookID}: {Name}, {Author} State: {EntityState.ToString()}";
 
-    public enum BookCategory { none = 0, Biographies, Cooking, Fantasy, Thriller, ScienceFiction };
-    public enum BookStatus { ToTake, Reserved, Borrowed};
+    }
 }

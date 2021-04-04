@@ -81,6 +81,15 @@ namespace LM.BL
         public List<Book> LoanHistory { get; set; }
         public Address BorrowerAddress { get; set; }
 
+        public string Log()
+        {
+            var logString = BorrowerId + ": " +
+                            FullName + " " +
+                            "Email: " + EmailAddress + " " +
+                            "Status: " + EntityState.ToString();
+            return logString;
+        }
+
         public override bool Validate()
         {
             bool isValid = true;

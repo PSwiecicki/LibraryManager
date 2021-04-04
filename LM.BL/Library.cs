@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LM.BL
 {
-    public class Library : EntityBase
+    public class Library : EntityBase, ILoggable
     {
         public Library() : this(0)
         {
@@ -24,6 +25,8 @@ namespace LM.BL
         public string LibraryName { get; set; }
         public Address LibraryAddress { get; set; }
         public List<Book> LibraryResources { get; set; }
+
+        public string Log() => $"{LibraryID}: {LibraryName} Status: {EntityState.ToString()}";
 
         public override bool Validate()
         {
