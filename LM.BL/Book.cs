@@ -34,7 +34,7 @@ namespace LM.BL
             return isValid;
         }
 
-        public string Log() => $"{BookID}: {Name}, {Author} State: {EntityState.ToString()}";
+        public string Log() => $"{BookID}: {Name}, {Author} State: {EntityState}";
 
     }
 }

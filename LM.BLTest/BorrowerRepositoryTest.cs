@@ -6,7 +6,7 @@ namespace LM.BLTest
     [TestClass]
     public class BorrowerRepositoryTest
     {
-        [TestMethod]
+        //[TestMethod]
         public void RetriveValid()
         {
             var borrowerRepository = new BorrowerRepository();

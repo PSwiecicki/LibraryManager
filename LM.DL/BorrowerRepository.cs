@@ -1,12 +1,13 @@
-﻿using System;
+﻿using LM.BL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LM.BL
+namespace LM.DL
 {
-    public class BorrowerRepository
+    class BorrowerRepository
     {
         public bool Save(Borrower borrower)
         {

@@ -1,10 +1,11 @@
-﻿using System;
+﻿using LM.BL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LM.BL
+namespace LM.DL
 {
     class LibraryRepository
     {
@@ -24,7 +25,7 @@ namespace LM.BL
             library.LibraryName = "Pod misiem";
             library.LibraryAddress = new();
             library.LibraryResources = new();
-            
+
             return library;
         }
 
@@ -45,6 +46,5 @@ namespace LM.BL
 
             return new List<Library>() { library, library2 };
         }
-
     }
 }

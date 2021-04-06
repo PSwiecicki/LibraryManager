@@ -68,9 +68,8 @@ namespace LM.BL
             }
             set
             {
-                int i;
                 string number = value.Trim();
-                if (number.Length == 9 && int.TryParse(number, out i))
+                if (number.Length == 9 && int.TryParse(number, out int i))
                 {
                     phoneNumber = value;
                 }
